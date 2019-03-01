@@ -1,0 +1,66 @@
+<html>
+<header>
+<link rel="stylesheet" href="css/styl.css" />
+<meta charset="UTF-8" />
+<link rel="icon" type="image/png" href="/favicon.ico" />
+<title> Układ Słoneczny </title>
+</header>
+<body>
+<div id="tresc">
+<svg><!-- version="1.1" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"-->
+
+	 
+<symbol id="slonce">
+  <defs>
+    <pattern id="sloneczna" x="345" y="250" patternUnits="objectBoundingBox" height="1" width="1" viewBox="140 85 400 345">
+      <image x="0" y="0" xlink:href="http://upload.wikimedia.org/wikipedia/commons/d/df/Sun_in_X-Ray.png" height="500" width="690" />
+    </pattern>
+  </defs>
+  <circle id='gwiazda' cx="100" cy="100" r="100" fill="url(#sloneczna)" />
+</symbol>
+
+<symbol id="ziemia">
+  <defs>
+    <pattern id="ziemska" x="0" y="0" patternUnits="objectBoundingBox" height="1" width="1" viewBox="36 36 605 605">
+      <image x="0" y="0" xlink:href="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Earth_Eastern_Hemisphere.jpg/640px-Earth_Eastern_Hemisphere.jpg" height="640" width="640" />
+    </pattern>
+  </defs>
+
+
+ <path d="M200,200a400,200 0 1,0 800,0a400,200 0 1,0 -800,0"
+      stroke="lightgrey" stroke-width="0" 
+      fill="none" id="orbitaZiemska"/>
+<g>
+<!-- księżyc -->
+	 <defs>
+    <pattern id="ksiezycowa" x="0" y="0" patternUnits="objectBoundingBox" height="1" width="1" viewBox="10 10 646 646">
+      <image x="0" y="0" xlink:href="http://upload.wikimedia.org/wikipedia/commons/1/10/Supermoon_Nov-14-2016-minneapolis.jpg" height="656" width="658" />
+    </pattern>
+  </defs>
+  <circle id="satelita" cx="200" cy="100" r="20" fill="url(#ksiezycowa)" >
+	 <animateTransform attributeType="xml"
+	  attributeName="transform"
+	  type="rotate"
+	  from="0 100 100"
+	  to="360 100 100"
+	  dur="3s"
+	  repeatCount="indefinite" />
+
+</circle>
+
+  <circle id='planeta' cx="100" cy="100" r="50" fill="url(#ziemska)" />
+	 
+	    <animateMotion dur="20s" repeatCount="indefinite">
+      <mpath xlink:href="#orbitaZiemska"/>
+    </animateMotion>
+</g>
+</symbol>
+
+<use xlink:href="#ziemia" x="0" y="0" /> 
+<use xlink:href="#slonce" x="550" y="200" />
+
+</svg>
+</div>
+</body>
+</html>
